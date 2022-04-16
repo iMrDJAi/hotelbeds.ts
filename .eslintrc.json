@@ -1,0 +1,22 @@
+{
+    "root": true,
+    "rules": {
+      "indent": ["error", 2],
+      "semi": ["error", "never"],
+      "no-trailing-spaces": "error",
+      "comma-dangle": "error",
+      "eol-last": "error",
+      "quotes":  ["error", "single"],
+      "@typescript-eslint/no-non-null-assertion": "off",
+      "@typescript-eslint/consistent-type-imports": "error"
+    },
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "ignorePatterns": ["/dist"]
+  }
