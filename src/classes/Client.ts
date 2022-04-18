@@ -3,27 +3,30 @@ import sha256 from 'crypto-js/sha256'
 import HEX from 'crypto-js/enc-hex'
 
 
-interface Options {
+interface ClientOptions {
   apiKey: string
   secret: string
-  baseURL: string
   userAgent?: string
+  hotelBookingURL?: string
+  hotelContentURL?: string
 }
 
 class Client {
+  hotelBookingURL = 'https://api.test.hotelbeds.com/hotel-api/1.0'
+  hotelContentURL = 'https://api.test.hotelbeds.com/hotel-content-api/1.0'
+
   apiKey: string
   secret: string
-  baseURL!: string
   userAgent?: string
   axios: AxiosInstance
 
-  constructor (options: Options) {
+  constructor (options: ClientOptions) {
     this.apiKey = options.apiKey
     this.secret = options.secret
-    this.baseURL = options.baseURL || this.baseURL
     this.userAgent = options.userAgent
+    this.hotelBookingURL = options.hotelBookingURL || this.hotelBookingURL
+    this.hotelContentURL = options.hotelContentURL || this.hotelContentURL
     this.axios = axios.create({
-      baseURL: this.baseURL,
       headers: {
         Accept: 'application/json',
         'Accept-Encoding': 'gzip'
@@ -52,4 +55,4 @@ class Client {
 }
 
 export default Client
-export type { Options }
+export type { ClientOptions }
