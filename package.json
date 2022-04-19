@@ -2,12 +2,18 @@
   "name": "hotelbeds.ts",
   "version": "1.0.0",
   "description": "Hotelbeds API wrapper written in TypeScript.",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "start": "npm run build && node dist/test.js",
+    "prepublishOnly": "npm run build",
+    "prepare": "npm run build",
     "build": "npm run lint && tsc",
-    "lint": "eslint . --ext .ts --ignore-path .gitignore --cache"
+    "lint": "eslint . --ext .ts --ignore-path .gitignore --cache",
+    "test": "npm run build && node dist/test.js"
   },
+  "files": [
+    "dist/"
+  ],
   "keywords": [
     "Hotelbeds",
     "APItude",

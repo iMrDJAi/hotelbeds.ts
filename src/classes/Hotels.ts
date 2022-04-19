@@ -1,6 +1,5 @@
 import Client from './Client'
 import type { AxiosResponse } from 'axios'
-import type { StatusRS } from '../types/Status'
 import type {
   AvailabilityRQ, AvailabilityRS, CheckRateRQ, CheckRateRS,
   BookingRQ, BookingRS, BookingListQR, BookingListRS,
@@ -25,10 +24,6 @@ import type {
 
 class Hotels extends Client {
   // #region Booking API
-
-  bookingAPIStatus (): Promise<AxiosResponse<StatusRS>> {
-    return this.get(`${this.hotelBookingURL}/status`)
-  }
 
   availability (options: AvailabilityRQ): Promise<AxiosResponse<AvailabilityRS>> {
     return this.post(`${this.hotelBookingURL}/hotels`, options)
@@ -65,10 +60,6 @@ class Hotels extends Client {
   // #endregion
 
   // #region Content API
-
-  contentAPIStatus (): Promise<AxiosResponse<StatusRS>> {
-    return this.get(`${this.hotelContentURL}/status`)
-  }
 
   hotels (params: HotelsQR): Promise<AxiosResponse<ApiHotelsRS>> {
     return this.get(`${this.hotelContentURL}/hotels`, { params })

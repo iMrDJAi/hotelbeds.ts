@@ -1,6 +1,8 @@
-import axios, { type AxiosInstance } from 'axios'
+import axios from 'axios'
 import sha256 from 'crypto-js/sha256'
 import HEX from 'crypto-js/enc-hex'
+import type { AxiosInstance, AxiosResponse } from 'axios'
+import type { StatusRS } from '../types/Status'
 
 
 interface ClientOptions {
@@ -42,6 +44,10 @@ class Client {
 
   get signature () {
     return sha256(`${this.apiKey}${this.secret}${Math.floor(Date.now()/1000)}`).toString(HEX)
+  }
+
+  status (): Promise<AxiosResponse<StatusRS>> {
+    return this.get(`${this.hotelBookingURL}/status`)
   }
 
   get request () { return this.axios.request }
