@@ -5,14 +5,24 @@ import type { AxiosInstance, AxiosResponse } from 'axios'
 import type { StatusRS } from '../types/Status'
 
 
+/** Options to authenticate and to customize the client */
 interface ClientOptions {
+  /** APItude API key */
   apiKey: string
+  /** APItude API secret */
   secret: string
+  /** Custom useragent to pass to Axios */
   userAgent?: string
+  /** Customize the base URL of the hotel booking API */
   hotelBookingURL?: string
+  /** Customize the base URL of the hotel Content API */
   hotelContentURL?: string
 }
 
+/**
+ * A class containing the necessary methods to send API requests to the
+ * the [APItude APIs](https://developer.hotelbeds.com/documentation/getting-started/).
+ */
 class Client {
   hotelBookingURL = 'https://api.test.hotelbeds.com/hotel-api/1.0'
   hotelContentURL = 'https://api.test.hotelbeds.com/hotel-content-api/1.0'

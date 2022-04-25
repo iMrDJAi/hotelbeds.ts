@@ -523,13 +523,13 @@ export interface ApiGeoLocation {
    * @type {number}
    * @memberof ApiGeoLocation
    */
-  'longitude': number
+  'longitude': number|string
   /**
    * Latitude coordinate for geolocation search.
    * @type {number}
    * @memberof ApiGeoLocation
    */
-  'latitude': number
+  'latitude': number|string
   /**
    * Radius size for circular search.
    * @type {number}
@@ -547,13 +547,13 @@ export interface ApiGeoLocation {
    * @type {number}
    * @memberof ApiGeoLocation
    */
-  'secondaryLatitude'?: number
+  'secondaryLatitude'?: number|string
   /**
    * Longitude coordinate for geolocation search for rectangle search. Determines bottom right point of the search area.
    * @type {number}
    * @memberof ApiGeoLocation
    */
-  'secondaryLongitude'?: number
+  'secondaryLongitude'?: number|string
 }
 
 export const ApiGeoLocationUnitEnum = {
@@ -1069,6 +1069,12 @@ export interface ApiOccupancy {
    * @memberof ApiOccupancy
    */
   'children': number
+  /**
+   * List of paxes for the room.
+   * @type {Array<ApiPax>}
+   * @memberof ApiOccupancy
+   */
+  'paxes'?: Array<ApiPax>
 }
 /**
  * Offer information.
