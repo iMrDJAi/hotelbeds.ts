@@ -2879,7 +2879,7 @@ export interface CheckRateRS {
    * @type {ApiHotelCheckRate}
    * @memberof CheckRateRS
    */
-  'hotels'?: ApiHotelCheckRate
+  'hotel'?: ApiHotelCheckRate
 }
 /**
  * Provided ThreeDS structure
