@@ -1850,7 +1850,7 @@ export interface ApiReceptive {
    * @type {string}
    * @memberof ApiReceptive
    */
-  'name'?: string
+  'company'?: string
 }
 /**
  * Reviews of the hotel.
