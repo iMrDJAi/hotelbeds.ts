@@ -2715,6 +2715,12 @@ export interface BookingRQ {
    */
   'clientReference': string
   /**
+   * The apiKey used to create the booking.
+   * @type {string}
+   * @memberof BookingRQ
+   */
+  'creationUser'?: string
+  /**
    * Free text sent to the hotelier. It can be used to request or inform of special requests to hotelier like: “Non-smoking room preferred”, “Twin bed please”, “Upper floor preferred”, “Late arrival”….
    * @type {string}
    * @memberof BookingRQ
