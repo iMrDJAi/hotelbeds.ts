@@ -1,6 +1,6 @@
 {
   "name": "hotelbeds.ts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Hotelbeds API wrapper written in TypeScript.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
